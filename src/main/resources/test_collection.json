@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "6dc32597-e985-4ae4-b742-7062d1e8fff6",
+		"name": "organization-employee-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create organization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizationName\": \"ABC org\",\r\n    \"address\": \"1/11, abc lane\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/api/organization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"organization"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create organization",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organizationName\": \"ABC org\",\r\n    \"address\": \"1/11, abc lane\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/organization",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"organization"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:33:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 22,\n        \"organizationName\": \"ABC org\",\n        \"address\": \"1/11, abc lane\",\n        \"deleted\": false\n    },\n    \"code\": 200,\n    \"message\": \"Organization created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeName\": \"Emp name\",\r\n    \"age\": \"25\",\r\n    \"profession\": \"Engineer\",\r\n    \"organizationId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create employee",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeName\": \"Emp name\",\r\n    \"age\": \"25\",\r\n    \"profession\": \"Engineer\",\r\n    \"organizationId\": 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:35:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 24,\n        \"employeeName\": \"Emp name\",\n        \"age\": 25,\n        \"profession\": \"Engineer\",\n        \"organizationId\": 22,\n        \"organizationName\": \"ABC org\"\n    },\n    \"code\": 200,\n    \"message\": \"Employee created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get by Organization Id and Employee Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee/18/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"18",
+						"19"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get by Organization Id and Employee Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee/18/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee",
+								"18",
+								"19"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:40:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 19,\n            \"employeeName\": \"abcd\",\n            \"age\": 25,\n            \"profession\": \"Engineer\",\n            \"organizationId\": 18,\n            \"organizationName\": \"abcd\"\n        }\n    ],\n    \"code\": 200,\n    \"message\": \"Employee fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get by Organization Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"18"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get by Organization Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee",
+								"18"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:41:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 19,\n            \"employeeName\": \"abcd\",\n            \"age\": 25,\n            \"profession\": \"Engineer\",\n            \"organizationId\": 18,\n            \"organizationName\": \"abcd\"\n        },\n        {\n            \"id\": 20,\n            \"employeeName\": \"abc\",\n            \"age\": 24,\n            \"profession\": \"Engineer\",\n            \"organizationId\": 18,\n            \"organizationName\": \"abcd\"\n        }\n    ],\n    \"code\": 200,\n    \"message\": \"Employee fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get by multiple employee Ids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee?ids=20,24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "20,24"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get by multiple employee Ids",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee?ids=20,24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "20,24"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:36:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 20,\n            \"employeeName\": \"abc\",\n            \"age\": 24,\n            \"profession\": \"Engineer\",\n            \"organizationId\": 18,\n            \"organizationName\": \"abcd\"\n        },\n        {\n            \"id\": 24,\n            \"employeeName\": \"Emp name\",\n            \"age\": 25,\n            \"profession\": \"Engineer\",\n            \"organizationId\": 22,\n            \"organizationName\": \"ABC org\"\n        }\n    ],\n    \"code\": 200,\n    \"message\": \"Employee fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 24,\r\n    \"employeeName\": \"Employee name\",\r\n    \"age\": \"23\",\r\n    \"profession\": \"IT\",\r\n    \"organizationId\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update employee",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 24,\r\n    \"employeeName\": \"Employee name\",\r\n    \"age\": \"23\",\r\n    \"profession\": \"IT\",\r\n    \"organizationId\": 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:44:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 24,\n        \"employeeName\": \"Employee name\",\n        \"age\": 23,\n        \"profession\": \"IT\",\n        \"organizationId\": 22,\n        \"organizationName\": \"ABC org\"\n    },\n    \"code\": 200,\n    \"message\": \"Employee updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete by multiple employee Ids",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee?ids=14,16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "14,16"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete by multiple employee Ids",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee?ids=14,16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "14,16"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:45:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"code\": 200,\n    \"message\": \"Employee deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete by organization Id and employee Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/api/employee/15/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"15",
+						"13"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete by organization Id and employee Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/v1/api/employee/15/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"api",
+								"employee",
+								"15",
+								"13"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Dec 2022 14:46:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"code\": 200,\n    \"message\": \"Employee deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
